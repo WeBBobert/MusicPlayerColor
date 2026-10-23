@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Background Color</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>MPCColorPickerCell</string>
+			<key>defaults</key>
+			<string>com.nightwind.musicplayercolorsettings</string>
+			<key>fallback</key>
+			<string>00000000</string>
+			<key>key</key>
+			<string>MusicPlayerColor</string>
+			<key>label</key>
+			<string>Background Color</string>
+			<key>supportsAlpha</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Cycles the background through rainbow colors. The opacity of your chosen color is kept.</string>
+			<key>label</key>
+			<string>RGB Mode</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.nightwind.musicplayercolorsettings/MusicPlayerColorChangedNotification</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.nightwind.musicplayercolorsettings</string>
+			<key>key</key>
+			<string>RGBEnabled</string>
+			<key>label</key>
+			<string>Enable RGB</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.nightwind.musicplayercolorsettings/MusicPlayerColorChangedNotification</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<integer>3</integer>
+			<key>defaults</key>
+			<string>com.nightwind.musicplayercolorsettings</string>
+			<key>key</key>
+			<string>RGBSpeed</string>
+			<key>max</key>
+			<integer>10</integer>
+			<key>min</key>
+			<integer>1</integer>
+			<key>showValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Contact</string>
+		</dict>
+		<dict>
+			<key>URL</key>
+			<string>https://avatars.githubusercontent.com/u/81449663?v=4</string>
+			<key>account</key>
+			<string>NightwindDev</string>
+			<key>accountLabel</key>
+			<string>NightwindDev</string>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>cellClass</key>
+			<string>GcTwitterCell</string>
+		</dict>
+		<dict>
+			<key>URL</key>
+			<string>https://github.com/NightwindDev/MusicPlayerColor</string>
+			<key>accessoryType</key>
+			<integer>1</integer>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>cellClass</key>
+			<string>GcSocialCell</string>
+			<key>pfpURL</key>
+			<string>https://github.com/NightwindDev/MusicPlayerColor/blob/main/icon.png?raw=true</string>
+			<key>subtitle</key>
+			<string>Open Source on GitHub</string>
+			<key>userName</key>
+			<string>MusicPlayerColor</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>MusicPlayerColor</string>
+</dict>
+</plist>

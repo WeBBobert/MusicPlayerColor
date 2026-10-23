@@ -1,16 +1,15 @@
-export TARGET = iphone:clang:latest:16.0
-export THEOS_PACKAGE_SCHEME = rootless
-export ARCHS = arm64 arm64e
-
-INSTALL_TARGET_PROCESSES = SpringBoard
+MPC_ROOT := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))..
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = MusicPlayerColor
+BUNDLE_NAME = MusicPlayerColorSettings
 
-MusicPlayerColor_FILES = Tweak.x
-MusicPlayerColor_CFLAGS = -fobjc-arc
+MusicPlayerColorSettings_FILES = MPCRootListController.m MPCColorPickerCell.m
+MusicPlayerColorSettings_FRAMEWORKS = UIKit
+MusicPlayerColorSettings_PRIVATE_FRAMEWORKS = Preferences
+MusicPlayerColorSettings_LIBRARIES = gcuniversal
+MusicPlayerColorSettings_LDFLAGS = -L$(MPC_ROOT)/lib
+MusicPlayerColorSettings_INSTALL_PATH = /Library/PreferenceBundles
+MusicPlayerColorSettings_CFLAGS = -fobjc-arc
 
-include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += musicplayercolorsettings
-include $(THEOS_MAKE_PATH)/aggregate.mk
+include $(THEOS_MAKE_PATH)/bundle.mk

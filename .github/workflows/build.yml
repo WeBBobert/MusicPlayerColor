@@ -25,7 +25,9 @@ jobs:
           cp lib/libgcuniversal.dylib "$HOME/theos/lib/"
 
       - name: Build
-        run: gmake package FINALPACKAGE=1
+        run: |
+          sed -i '' '/PRIVATE_FRAMEWORKS/d' musicplayercolorsettings/Makefile
+          gmake package FINALPACKAGE=1 ADDITIONAL_LDFLAGS="-L$GITHUB_WORKSPACE/lib -L$HOME/theos/lib -undefined dynamic_lookup"
 
       - uses: actions/upload-artifact@v4
         with:
